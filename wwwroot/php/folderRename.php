@@ -28,7 +28,7 @@ if(
 	require_once('mysql.php');
 
 
-	$sql = "UPDATE Folders SET FolderName='".$_POST["NEWFOLDERNAME"]."' WHERE ID=".$_POST["FOLDERID"]." AND UID=".$_SESSION["ID"]." AND Of=".$_POST["FOLDER"]." AND CreateDatetime='".$_POST["CREATEDATETIME"]."';";
+	$sql = "UPDATE folders SET FolderName='".$_POST["NEWFOLDERNAME"]."' WHERE ID=".$_POST["FOLDERID"]." AND UID=".$_SESSION["ID"]." AND Of=".$_POST["FOLDER"]." AND CreateDatetime='".$_POST["CREATEDATETIME"]."';";
 
 
 	mysqli_query($conn,$sql);

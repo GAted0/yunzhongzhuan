@@ -23,7 +23,7 @@ if(
 
 
 
-	$sql = "SELECT Username FROM Users WHERE Username='".$_POST["USERNAME"]."';";
+	$sql = "SELECT Username FROM users WHERE Username='".$_POST["USERNAME"]."';";
 
 	$result = mysqli_query($conn,$sql);
 
@@ -64,7 +64,7 @@ if(
 
 
 	// 写入数据库
-	$sql = "INSERT INTO Users(ID,Username,Password) values(NULL,'".$_POST["USERNAME"]."','".$_POST["PASSWORD"]."');";
+	$sql = "INSERT INTO users(ID,Username,Password) values(NULL,'".$_POST["USERNAME"]."','".$_POST["PASSWORD"]."');";
 
 	mysqli_query($conn,$sql);
 

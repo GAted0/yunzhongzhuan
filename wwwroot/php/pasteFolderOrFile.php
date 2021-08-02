@@ -74,7 +74,7 @@ if(
 
 
 
-		$sql = "SELECT ID FROM Folders WHERE ID=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"].";";
+		$sql = "SELECT ID FROM folders WHERE ID=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"].";";
 
 
 		$result = mysqli_query($conn,$sql);
@@ -94,7 +94,7 @@ if(
 
 		if(sizeof($FoldersArray) > 0){
 
-			$sql = "UPDATE Folders SET Of=".$_POST["FOLDER"].",CreateDatetime='".date('Y-m-d H:i:s')."' WHERE ID in(".$_POST["FOLDERSARRAY"].") AND ID!=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"].";";
+			$sql = "UPDATE folders SET Of=".$_POST["FOLDER"].",CreateDatetime='".date('Y-m-d H:i:s')."' WHERE ID in(".$_POST["FOLDERSARRAY"].") AND ID!=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"].";";
 
 			mysqli_query($conn,$sql);
 
@@ -105,7 +105,7 @@ if(
 
 		if(sizeof($FilesArray)>0){
 
-			$sql = "UPDATE Files SET FolderOf=".$_POST["FOLDER"].",CreateDatetime='".date('Y-m-d H:i:s')."' WHERE ID in(".$_POST["FILESARRAY"].") AND UID=".$_SESSION["ID"].";";
+			$sql = "UPDATE files SET FolderOf=".$_POST["FOLDER"].",CreateDatetime='".date('Y-m-d H:i:s')."' WHERE ID in(".$_POST["FILESARRAY"].") AND UID=".$_SESSION["ID"].";";
 
 			mysqli_query($conn,$sql);
 

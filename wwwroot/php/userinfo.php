@@ -34,12 +34,6 @@ if(
 
 
 
-	require_once('mysql.php');
-
-
-
-
-
 
 
 

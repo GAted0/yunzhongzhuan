@@ -26,7 +26,7 @@ if(
 	// 如果 ID 是 0 不判断
 	if($_POST["FOLDER"]>0){
 
-		$sql = "SELECT ID FROM Folders WHERE ID=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"].";";
+		$sql = "SELECT ID FROM folders WHERE ID=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"].";";
 
 		$result = mysqli_query($conn,$sql);
 
@@ -52,7 +52,7 @@ if(
 		$nowdatetime = date('Y-m-d H:i:s');
 
 
-		$sql = "INSERT INTO Folders(ID,FolderName,CreateDatetime,Of,UID) VALUES(NULL,'".$_POST["CREATEFOLDERNAME"]."','".$nowdatetime."',".$_POST["FOLDER"].",".$_SESSION["ID"].");";
+		$sql = "INSERT INTO folders(ID,FolderName,CreateDatetime,Of,UID) VALUES(NULL,'".$_POST["CREATEFOLDERNAME"]."','".$nowdatetime."',".$_POST["FOLDER"].",".$_SESSION["ID"].");";
 
 
 

@@ -45,7 +45,7 @@ if(		isset($_GET["ID"])  &&  $_GET["ID"]!=null && $_GET["ID"]!="" && is_numeric(
 	// 查询 直链表 ID 和 密码 和 存在于 upload.yunzhongzhuan.com 的文件！    
 	// 查询有效时间 大于当前日期的 未过期的
 	# $sql = "SELECT FileID FROM HttpsLinks WHERE ID=".$_GET["ID"]." AND RandVerifyString='".$_GET["RandVerifyString"]."' AND SUBDATE(EndDateTime,interval 0 minute)>now()";
-	$sql = "SELECT FileID FROM HttpsLinks WHERE ID=".$_GET["ID"]." AND RandVerifyString='".$_GET["RandVerifyString"]."';";
+	$sql = "SELECT FileID FROM httpslinks WHERE ID=".$_GET["ID"]." AND RandVerifyString='".$_GET["RandVerifyString"]."';";
 
 
 
@@ -57,7 +57,7 @@ if(		isset($_GET["ID"])  &&  $_GET["ID"]!=null && $_GET["ID"]!="" && is_numeric(
 
 
 		// 根据文件ID 查询文件表 
-		$sql = "SELECT Hash,FileName FROM Files WHERE ID=".$row["FileID"].";";
+		$sql = "SELECT Hash,FileName FROM files WHERE ID=".$row["FileID"].";";
 
 	
 		$result2 = mysqli_query($conn,$sql);

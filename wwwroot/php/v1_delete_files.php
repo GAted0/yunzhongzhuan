@@ -100,7 +100,7 @@ if(
 			if($isNum>0){
 
 
-				$sql = "DELETE FROM FILES WHERE ID in(".$_POST["fileIDArrayString"].") AND UID=" . $_SESSION["ID"] . " AND Username='" . $_SESSION["Username"] . "';";
+				$sql = "DELETE FROM files WHERE ID in(".$_POST["fileIDArrayString"].") AND UID=" . $_SESSION["ID"] . " AND Username='" . $_SESSION["Username"] . "';";
 
 				mysqli_query($conn,$sql);
 
@@ -119,7 +119,7 @@ if(
 					global $conn;
 
 					// 先删除文件夹内文件
-					$sql = "DELETE FROM Files WHERE UID=".$_SESSION["ID"]." AND FolderOf=".$folderID." AND Username='".$_SESSION["Username"]."'";
+					$sql = "DELETE FROM files WHERE UID=".$_SESSION["ID"]." AND FolderOf=".$folderID." AND Username='".$_SESSION["Username"]."'";
 
 					mysqli_query($conn,$sql);
 
@@ -129,7 +129,7 @@ if(
 
 
 					// 如果文件夹内还有文件夹
-					$sql = "SELECT * FROM Folders WHERE UID=".$_SESSION["ID"]." AND Of='".$folderID."'";
+					$sql = "SELECT * FROM folders WHERE UID=".$_SESSION["ID"]." AND Of='".$folderID."'";
 
 					$result = mysqli_query($conn,$sql);
 
@@ -145,7 +145,7 @@ if(
 
 
 					// 删除文件夹
-					$sql = "DELETE FROM FOLDERS WHERE ID=".$folderID." AND UID=".$_SESSION["ID"].";";
+					$sql = "DELETE FROM folders WHERE ID=".$folderID." AND UID=".$_SESSION["ID"].";";
 
 					mysqli_query($conn,$sql);
 
@@ -162,7 +162,7 @@ if(
 				
 
 
-				$sql = "DELETE FROM FOLDERS WHERE ID in(".$_POST["folderIDArrayString"].") AND UID=".$_SESSION["ID"].";";
+				$sql = "DELETE FROM folders WHERE ID in(".$_POST["folderIDArrayString"].") AND UID=".$_SESSION["ID"].";";
 
 				mysqli_query($conn,$sql);
 

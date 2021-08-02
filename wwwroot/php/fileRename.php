@@ -29,7 +29,7 @@ if(
 	require_once('mysql.php');
 
 
-	$sql = "UPDATE Files SET FileName='".$_POST["NEWFILENAME"]."' WHERE ID=".$_POST["FILEID"]." AND UID=".$_SESSION["ID"]." AND FileSize=".$_POST["FILESIZE"]." AND FolderOf=".$_POST["FOLDER"]." AND CreateDatetime='".$_POST["CREATEDATETIME"]."';";
+	$sql = "UPDATE files SET FileName='".$_POST["NEWFILENAME"]."' WHERE ID=".$_POST["FILEID"]." AND UID=".$_SESSION["ID"]." AND FileSize=".$_POST["FILESIZE"]." AND FolderOf=".$_POST["FOLDER"]." AND CreateDatetime='".$_POST["CREATEDATETIME"]."';";
 
 
 	mysqli_query($conn,$sql);

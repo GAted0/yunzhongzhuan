@@ -39,7 +39,7 @@ if(
 
 
 		// 默认文件夹
-		$sql = "SELECT ID,FileName,FileSize,FolderOf,CreateDatetime,Hash FROM Files WHERE UID=".$_SESSION["ID"]." AND FileName LIKE '%".$_POST["KEYWORD"]."%' ORDER BY CreateDatetime DESC LIMIT ".($_POST["PAGE"]*$_POST["NUMBER"]).",".$_POST["NUMBER"].";";
+		$sql = "SELECT ID,FileName,FileSize,FolderOf,CreateDatetime,Hash FROM files WHERE UID=".$_SESSION["ID"]." AND FileName LIKE '%".$_POST["KEYWORD"]."%' ORDER BY CreateDatetime DESC LIMIT ".($_POST["PAGE"]*$_POST["NUMBER"]).",".$_POST["NUMBER"].";";
 
 
 
@@ -49,10 +49,10 @@ if(
 		// 如果是特定文件夹
 		if($_POST["FOLDER"]>0){
 			// 特定文件夹
-			$sql = "SELECT ID,FileName,FileSize,FolderOf,CreateDatetime,Hash FROM Files WHERE FolderOf=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"]." AND FileName LIKE '%".$_POST["KEYWORD"]."%' ORDER BY CreateDatetime DESC LIMIT ".($_POST["PAGE"]*$_POST["NUMBER"]).",".$_POST["NUMBER"].";";
+			$sql = "SELECT ID,FileName,FileSize,FolderOf,CreateDatetime,Hash FROM files WHERE FolderOf=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"]." AND FileName LIKE '%".$_POST["KEYWORD"]."%' ORDER BY CreateDatetime DESC LIMIT ".($_POST["PAGE"]*$_POST["NUMBER"]).",".$_POST["NUMBER"].";";
 		}else{
 			// 默认文件夹
-			$sql = "SELECT ID,FileName,FileSize,FolderOf,CreateDatetime,Hash FROM Files WHERE UID=".$_SESSION["ID"]." AND FolderOf=".$_POST["FOLDER"]." AND FileName LIKE '%".$_POST["KEYWORD"]."%' ORDER BY CreateDatetime DESC LIMIT ".($_POST["PAGE"]*$_POST["NUMBER"]).",".$_POST["NUMBER"].";";
+			$sql = "SELECT ID,FileName,FileSize,FolderOf,CreateDatetime,Hash FROM files WHERE UID=".$_SESSION["ID"]." AND FolderOf=".$_POST["FOLDER"]." AND FileName LIKE '%".$_POST["KEYWORD"]."%' ORDER BY CreateDatetime DESC LIMIT ".($_POST["PAGE"]*$_POST["NUMBER"]).",".$_POST["NUMBER"].";";
 		}
 
 
@@ -117,7 +117,7 @@ if(
 
 
 	// 查询直链
-	$sql = "SELECT ID,FileID,RandVerifyString FROM HttpsLinks WHERE FileID in(".$files_id.") AND UID=".$_SESSION["ID"].";";
+	$sql = "SELECT ID,FileID,RandVerifyString FROM httpslinks WHERE FileID in(".$files_id.") AND UID=".$_SESSION["ID"].";";
 
 
 
@@ -136,7 +136,7 @@ if(
 
 	
 	// 查询分享
-	$sql = "SELECT ID,FileID,RandVerifyString FROM ShareFiles WHERE FileID in(".$files_id.") AND UID=".$_SESSION["ID"].";";
+	$sql = "SELECT ID,FileID,RandVerifyString FROM sharefiles WHERE FileID in(".$files_id.") AND UID=".$_SESSION["ID"].";";
 
 
 	$result = mysqli_query($conn,$sql);
@@ -254,7 +254,7 @@ if(
 		// 批量增加直链
 		$data_dl_sql = implode(",",$data_dl_sql);
 
-		$sql = "INSERT INTO HttpsLinks() VALUES".$data_dl_sql.";";
+		$sql = "INSERT INTO httpslinks() VALUES".$data_dl_sql.";";
 
 
 		mysqli_query($conn,$sql);
@@ -277,7 +277,7 @@ if(
 		$data_ndl = implode(",",$data_ndl);
 
 		// 查询直链化得到的 ID
-		$sql = "SELECT ID,FileID FROM HttpsLinks WHERE FileID in(".$data_ndl.") AND UID=".$_SESSION["ID"].";";
+		$sql = "SELECT ID,FileID FROM httpslinks WHERE FileID in(".$data_ndl.") AND UID=".$_SESSION["ID"].";";
 
 
 
@@ -314,7 +314,7 @@ if(
 		// 批量增加直链
 		$data_sl_sql = implode(",",$data_sl_sql);
 
-		$sql = "INSERT INTO ShareFiles() VALUES".$data_sl_sql.";";
+		$sql = "INSERT INTO sharefiles() VALUES".$data_sl_sql.";";
 
 
 		mysqli_query($conn,$sql);
@@ -337,7 +337,7 @@ if(
 		$data_nsl = implode(",",$data_nsl);
 
 		// 查询直链化得到的 ID
-		$sql = "SELECT ID,FileID FROM ShareFiles WHERE FileID in(".$data_nsl.") AND UID=".$_SESSION["ID"].";";
+		$sql = "SELECT ID,FileID FROM sharefiles WHERE FileID in(".$data_nsl.") AND UID=".$_SESSION["ID"].";";
 
 
 

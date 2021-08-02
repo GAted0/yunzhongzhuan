@@ -17,7 +17,7 @@ if(
 	require_once('mysql.php');
 
 
-	$sql = "SELECT FileID,`Datetime` FROM Sharefiles WHERE ID=".$_POST["SID"]." AND RandVerifyString='".$_POST["SKEY"]."';";
+	$sql = "SELECT FileID,`Datetime` FROM sharefiles WHERE ID=".$_POST["SID"]." AND RandVerifyString='".$_POST["SKEY"]."';";
 
 
 	$result = mysqli_query($conn,$sql);
@@ -30,7 +30,7 @@ if(
 
 
 
-		$sql = "SELECT ID,UID,FileName,Username,FileSize,CreateDatetime FROM Files WHERE ID=".$row["FileID"].";";
+		$sql = "SELECT ID,UID,FileName,Username,FileSize,CreateDatetime FROM files WHERE ID=".$row["FileID"].";";
 
 		$result = mysqli_query($conn,$sql);
 
@@ -65,7 +65,7 @@ if(
 
 
 			// 查找 HTTP 直下
-			$sql = "SELECT ID,RandVerifyString FROM HttpsLinks WHERE FileID=".$row2["ID"].";";
+			$sql = "SELECT ID,RandVerifyString FROM httpslinks WHERE FileID=".$row2["ID"].";";
 
 
 			$result = mysqli_query($conn,$sql);
@@ -111,7 +111,7 @@ if(
 
 			$RandVerifyString = getRandChar(8);
 
-			$sql = "INSERT INTO HttpsLinks() VALUES(NULL,".$row2["UID"].",'".date('Y-m-d H:i:s')."',".$row2["ID"].",'".$RandVerifyString."');";
+			$sql = "INSERT INTO httpslinks() VALUES(NULL,".$row2["UID"].",'".date('Y-m-d H:i:s')."',".$row2["ID"].",'".$RandVerifyString."');";
 
 
 			mysqli_query($conn,$sql);

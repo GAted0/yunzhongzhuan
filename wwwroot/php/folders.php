@@ -50,7 +50,7 @@ if(
 
 
 		// 默认文件夹
-		$sql = "SELECT ID,FolderName,CreateDatetime,Of FROM Folders WHERE UID=".$_SESSION["ID"]." AND FolderName Like '%".$_POST["KEYWORD"]."%' ".$Order." ".$Limit.";";;
+		$sql = "SELECT ID,FolderName,CreateDatetime,Of FROM folders WHERE UID=".$_SESSION["ID"]." AND FolderName Like '%".$_POST["KEYWORD"]."%' ".$Order." ".$Limit.";";;
 	
 
 
@@ -60,10 +60,10 @@ if(
 		// 如果是特定文件夹
 		if($_POST["FOLDER"]>0){
 			// 特定文件夹
-			$sql = "SELECT ID,FolderName,CreateDatetime,Of FROM Folders WHERE Of=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"]." ".$Order." ".$Limit.";";
+			$sql = "SELECT ID,FolderName,CreateDatetime,Of FROM folders WHERE Of=".$_POST["FOLDER"]." AND UID=".$_SESSION["ID"]." ".$Order." ".$Limit.";";
 		}else{
 			// 默认文件夹
-			$sql = "SELECT ID,FolderName,CreateDatetime,Of FROM Folders WHERE UID=".$_SESSION["ID"]." AND Of=".$_POST["FOLDER"]." ".$Order." ".$Limit.";";
+			$sql = "SELECT ID,FolderName,CreateDatetime,Of FROM folders WHERE UID=".$_SESSION["ID"]." AND Of=".$_POST["FOLDER"]." ".$Order." ".$Limit.";";
 		}
 		
 

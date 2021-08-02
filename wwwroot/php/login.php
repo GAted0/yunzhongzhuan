@@ -17,7 +17,7 @@ if(
 
 
 
-	$sql = "SELECT ID,Username,Password FROM Users WHERE Username='".$_POST["USERNAME"]."';";
+	$sql = "SELECT ID,Username,Password FROM users WHERE Username='".$_POST["USERNAME"]."';";
 
 	$result = mysqli_query($conn,$sql);
 
@@ -50,7 +50,7 @@ if(
 
 			// 查询上传了多少个文件
 			// 查询文件是否满了300个
-			$sql = "SELECT COUNT(ID) FROM Files WHERE UID=".$_SESSION["ID"].";";
+			$sql = "SELECT COUNT(ID) FROM files WHERE UID=".$_SESSION["ID"].";";
 			$result = mysqli_query($conn,$sql);
 			$row = mysqli_fetch_assoc($result);
 			// 如果超过100个
@@ -58,7 +58,7 @@ if(
 
 
 
-			$sql = "SELECT SUM(FileSize) FROM `files` WHERE UID=".$_SESSION["ID"].";";
+			$sql = "SELECT SUM(FileSize) FROM files WHERE UID=".$_SESSION["ID"].";";
 
 			$result = mysqli_query($conn,$sql);
 
