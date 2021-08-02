@@ -26,3 +26,8 @@
 
 我不一定在线，我可能比较忙。大家一起讨论。
 
+群友搭建的演示地址：
+
+https://www.yfxsoft.com/#sharefile=qrm39J26_43
+
+https://cf.lbzt.tk
