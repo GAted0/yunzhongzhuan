@@ -1,6 +1,7 @@
 本程序是由 PHP+MySQL+Cloudflare Workers 组合构建的一个无限容量云盘程序。
 首先，要使用这个云盘程序，必须配合 CDN Cloudflare 的 Workers 功能来使用。
 所以，你的域名需要先接入 Cloudflare，然后再开始安装程序。
+网站效果：https://www.yunzhongzhuan.com
 
 第一步、安装位于 ./install/MySQL 文件夹内的数据库文件。
 第二步、修改 ./wwwroot/php/mysql.php 这个数据库连接配置文件。
