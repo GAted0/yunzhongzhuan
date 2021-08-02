@@ -11,7 +11,7 @@
 
 $mysql_host = '127.0.0.1';	// 数据库 IP 地址
 $mysql_username = 'root';	// 登录用户名
-$mysql_password = 'LiWenhua1103';	// 用户密码
+$mysql_password = '123456';	// 用户密码
 $mysql_database = 'inthenas';	// 数据库名称
 $mysql_port = '3306';	// 数据库端口
 
